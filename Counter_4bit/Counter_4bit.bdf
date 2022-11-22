@@ -24,7 +24,7 @@ agreement for further details.
 	(input)
 	(rect 24 288 192 304)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "button1" (rect 5 0 42 12)(font "Arial" ))
+	(text "button1" (rect 5 0 41 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -40,7 +40,7 @@ agreement for further details.
 	(input)
 	(rect 24 384 192 400)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "button4" (rect 5 0 42 12)(font "Arial" ))
+	(text "button4" (rect 5 0 41 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -616,10 +616,6 @@ agreement for further details.
 	(pt 984 392)
 )
 (connector
-	(pt 984 392)
-	(pt 192 392)
-)
-(connector
 	(pt 808 312)
 	(pt 824 312)
 )
@@ -659,6 +655,34 @@ agreement for further details.
 	(pt 360 176)
 	(pt 472 176)
 )
+(connector
+	(pt 304 232)
+	(pt 304 392)
+)
+(connector
+	(pt 304 392)
+	(pt 192 392)
+)
+(connector
+	(pt 528 232)
+	(pt 528 392)
+)
+(connector
+	(pt 528 392)
+	(pt 304 392)
+)
+(connector
+	(pt 744 232)
+	(pt 744 392)
+)
+(connector
+	(pt 984 392)
+	(pt 744 392)
+)
+(connector
+	(pt 744 392)
+	(pt 528 392)
+)
 (junction (pt 136 176))
 (junction (pt 224 296))
 (junction (pt 648 296))
@@ -674,3 +698,6 @@ agreement for further details.
 (junction (pt 696 72))
 (junction (pt 696 176))
 (junction (pt 808 176))
+(junction (pt 304 392))
+(junction (pt 528 392))
+(junction (pt 744 392))
