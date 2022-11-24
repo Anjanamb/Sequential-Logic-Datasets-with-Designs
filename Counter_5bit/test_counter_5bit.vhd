@@ -1,4 +1,4 @@
--- testbench for counter_3bit
+-- testbench for counter_5bit
 
 -- Load Altera libraries for this chip
 LIBRARY IEEE;
@@ -14,7 +14,7 @@ end test_counter_5bit;
 -- (May have several per entity)
 architecture testbench1 of test_counter_5bit is
 
-  -- Set up the signals on the 3bit_counter
+  -- Set up the signals on the 5bit_counter
   signal button1 : std_logic;
   signal button4 : std_logic;
   signal led1    : std_logic;
