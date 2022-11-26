@@ -1,4 +1,4 @@
--- testbench for counter_3bit
+-- testbench for Counter_3bit_AsyDown
 
 -- Load Altera libraries for this chip
 LIBRARY IEEE;
@@ -7,12 +7,12 @@ USE IEEE.STD_LOGIC_1164.ALL;
 USE MAXII.MAXII_COMPONENTS.ALL;
 
 -- Set up this testbench as an entity
-entity test_counter_3bit is
-end test_counter_3bit;
+entity test_counter_3bit_AsyDown is
+end test_counter_3bit_AsyDown;
 
 -- Create an implementation of the entity
 -- (May have several per entity)
-architecture testbench1 of test_counter_3bit is
+architecture testbench1 of test_counter_3bit_AsyDown is
 
   -- Set up the signals on the 3bit_counter
   signal button1 : std_logic;
