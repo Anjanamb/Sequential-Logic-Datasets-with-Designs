@@ -14,7 +14,7 @@ end test_counter_3bit_AsyDown;
 -- (May have several per entity)
 architecture testbench1 of test_counter_3bit_AsyDown is
 
-  -- Set up the signals on the 3bit_counter
+  -- Set up the signals on the 3bit_counter_AsyDown
   signal button1 : std_logic;
   signal button4 : std_logic;
   signal led1    : std_logic;
