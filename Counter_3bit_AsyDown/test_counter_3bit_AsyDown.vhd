@@ -26,7 +26,7 @@ architecture testbench1 of test_counter_3bit_AsyDown is
   
   begin
     -- dut = device under test (same name as top project from Quartus)
-    dut : entity work.counter_3bit
+    dut : entity work.counter_3bit_AsyDown
       -- Map the ports from the dut to this testbench
       port map (
         button1 => button1,
