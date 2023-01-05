@@ -14,7 +14,7 @@ end test_counter_16bit;
 -- (May have several per entity)
 architecture testbench1 of test_counter_16bit is
 
-  -- Set up the signals on the 10bit_counter
+  -- Set up the signals on the 16bit_counter
   signal button1 : std_logic;
   signal button4 : std_logic;
   signal led1    : std_logic;
