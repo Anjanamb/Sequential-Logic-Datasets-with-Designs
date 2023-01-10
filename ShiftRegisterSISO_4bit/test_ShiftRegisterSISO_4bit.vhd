@@ -15,8 +15,8 @@ end test_ShiftRegisterSISO_4bit;
 architecture testbench1 of test_ShiftRegisterSISO_4bit is
 
   -- Set up the signals on the ShiftRegisterSISO_4bit
-  signal button1 : std_logic;
-  signal button4 : std_logic;
+  signal clk : std_logic;
+  signal clrn : std_logic;
   signal in1 : std_logic;
   signal out1    : std_logic;
 
@@ -28,8 +28,8 @@ architecture testbench1 of test_ShiftRegisterSISO_4bit is
     dut : entity work.ShiftRegisterSISO_4bit
       -- Map the ports from the dut to this testbench
       port map (
-        button1 => button1,
-        button4 => button4,
+        clk => clk,
+        clrn => clrn,
 	in1 => in1,
         out1 => out1);
     
@@ -39,23 +39,23 @@ architecture testbench1 of test_ShiftRegisterSISO_4bit is
         -- Just make a clock on button1 to simulate pushing the button
         loop
 	  in1 <= '0';
-          button1 <= '0'; wait for 10 ns;
-          button1 <= '1'; wait for 10 ns;
-	  button1 <= '0'; wait for 10 ns;
-          button1 <= '1'; wait for 10 ns;
-	  button1 <= '0'; wait for 10 ns;
-          button1 <= '1'; wait for 10 ns;
-	  button1 <= '0'; wait for 10 ns;
-          button1 <= '1'; wait for 10 ns;
+          clk <= '0'; wait for 10 ns;
+          clk <= '1'; wait for 10 ns;
+	  clk <= '0'; wait for 10 ns;
+          clk <= '1'; wait for 10 ns;
+	  clk <= '0'; wait for 10 ns;
+          clk <= '1'; wait for 10 ns;
+	  clk <= '0'; wait for 10 ns;
+          clk <= '1'; wait for 10 ns;
 	  in1 <= '1';
-	  button1 <= '0'; wait for 10 ns;
-          button1 <= '1'; wait for 10 ns;
-	  button1 <= '0'; wait for 10 ns;
-          button1 <= '1'; wait for 10 ns;
-	  button1 <= '0'; wait for 10 ns;
-          button1 <= '1'; wait for 10 ns;
-	  button1 <= '0'; wait for 10 ns;
-          button1 <= '1'; wait for 10 ns;
+	  clk <= '0'; wait for 10 ns;
+          clk <= '1'; wait for 10 ns;
+	  clk <= '0'; wait for 10 ns;
+          clk <= '1'; wait for 10 ns;
+	  clk <= '0'; wait for 10 ns;
+          clk <= '1'; wait for 10 ns;
+	  clk <= '0'; wait for 10 ns;
+          clk <= '1'; wait for 10 ns;
         end loop;
       end process stimulus;
 end architecture testbench1;
