@@ -17,8 +17,8 @@ end test_ShiftRegisterSIPO_16bit;
 architecture testbench1 of test_ShiftRegisterSIPO_16bit is
 
   -- Set up the signals on the ShiftRegisterSISO_16bit
-  signal button1 : std_logic;
-  signal button4 : std_logic;
+  signal clk : std_logic;
+  signal clrn : std_logic;
   signal in1 : std_logic;
   signal out1    : std_logic;
   signal out2    : std_logic;
@@ -45,8 +45,8 @@ architecture testbench1 of test_ShiftRegisterSIPO_16bit is
     dut : entity work.ShiftRegisterSIPO_16bit
       -- Map the ports from the dut to this testbench
       port map (
-        button1 => button1,
-        button4 => button4,
+        clk => clk,
+        clrn => clrn,
 	in1 => in1,
         out1 => out1,
         out2 => out2,
@@ -80,14 +80,14 @@ architecture testbench1 of test_ShiftRegisterSIPO_16bit is
       	  y := integer(x* 20.0);report "Number is " & integer'image(y);
 	  in1 <= '0';
 	  for i in 1 to y+1 loop
-            button1 <= '0'; wait for 10 ps;
-            button1 <= '1'; wait for 10 ps;
+            clk <= '0'; wait for 10 ps;
+            clk <= '1'; wait for 10 ps;
       	  end loop;
 	
 	  in1 <= '1';
   	  for i in 1 to y+1 loop
-            button1 <= '0'; wait for 10 ps;
-            button1 <= '1'; wait for 10 ps;
+            clk <= '0'; wait for 10 ps;
+            clk <= '1'; wait for 10 ps;
       	  end loop;
         end loop;
     end process stimulus;
