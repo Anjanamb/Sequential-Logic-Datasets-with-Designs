@@ -1,3 +1,0 @@
-This circuit is a 8-bit binary ripple counter. 
-All the JK flip-flops are configured to toggle their state on a downward transition of their clock input, and the output of each flip-flop is fed into the next flip-flop's clock. 
-So, when each bit changes from 1 to 0, it "carries the one" to the next higher bit.
