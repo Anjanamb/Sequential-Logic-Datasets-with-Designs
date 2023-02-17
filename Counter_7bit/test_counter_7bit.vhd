@@ -1,10 +1,14 @@
--- testbench for counter_5bit
+-- testbench for counter_7bit
 
 -- Load Altera libraries for this chip
 LIBRARY IEEE;
 LIBRARY MAXII;
+LIBRARY STD;
 USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.MATH_REAL.uniform;
+USE IEEE.MATH_REAL.floor;
 USE MAXII.MAXII_COMPONENTS.ALL;
+USE STD.TEXTIO.ALL;
 
 -- Set up this testbench as an entity
 entity test_counter_7bit is
@@ -27,6 +31,12 @@ architecture testbench1 of test_counter_7bit is
 
   -- Set up the vcc signal as 1
   signal vcc  : std_logic := '1';
+
+  -- Set up the clock period
+  constant clk_period : time := 10 ns;
+
+  -- Set up file variables for writing to a file
+  file tb_file : text open write_mode is "tb_output.txt";
   
   begin
     -- dut = device under test (same name as top project from Quartus)
@@ -42,14 +52,39 @@ architecture testbench1 of test_counter_7bit is
 	led5 => led5,
 	led6 => led6,
 	led7 => led7 );
+
+    -- Process to write signals to a file on a positive clock edge
+    write_to_file : process(button1)
+    variable line : line;
+    begin
+      if rising_edge(button1) then
+          write(line, std_logic'image(button1));
+	  write(line, ' '); -- Separate with a space
+          write(line, std_logic'image(led1));
+	  write(line, ' '); -- Separate with a space
+          write(line, std_logic'image(led2));
+	  write(line, ' '); -- Separate with a space
+          write(line, std_logic'image(led3));
+	  write(line, ' '); -- Separate with a space
+          write(line, std_logic'image(led4));
+	  write(line, ' '); -- Separate with a space
+          write(line, std_logic'image(led5));
+	  write(line, ' '); -- Separate with a space
+          write(line, std_logic'image(led6));
+	  write(line, ' '); -- Separate with a space
+          write(line, std_logic'image(led7));
+	  write(line, ' '); -- Separate with a space
+          writeline(tb_file, line);
+       end if;
+     end process write_to_file;
     
     -- Set up the signals    
     stimulus : process is
       begin
         -- Just make a clock on button1 to simulate pushing the button
         loop
-          button1 <= '0'; wait for 10 ps;
-          button1 <= '1'; wait for 10 ps;
+          button1 <= '0'; wait for clk_period/2;
+          button1 <= '1'; wait for clk_period/2;
         end loop;
       end process stimulus;
 end architecture testbench1;
