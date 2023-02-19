@@ -5,5 +5,5 @@
  ```
  Testbench in VHDL (with the extension . vhd) 
  Schematic design file (with the extension . bdf) 
- List window file (with the extension . lst) 
+ Dataset text file (with the extension . txt) 
 ```
