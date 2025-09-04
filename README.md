@@ -7,3 +7,7 @@
  Schematic design file (with the extension . bdf) 
  Dataset text file (with the extension . txt) 
 ```
+
+### _Links_ 
+
+#### 1. [Training data set preparation](https://github.com/Anjanamb/FPGA-Implementation-and-interfacing)
